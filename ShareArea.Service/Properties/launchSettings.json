@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ShareArea.Service": {
+      "commandName": "Project",
+      "commandLineArgs": "--run"
+    }
+  }
+}

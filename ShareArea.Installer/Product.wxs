@@ -1,0 +1,75 @@
+<?xml version="1.0" ?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<Product Id="*" Name="Share Area" Language="1033" Version="1.0.0.3" Manufacturer="Wall" UpgradeCode="d23d5681-2e11-4020-900d-75b67c4156c0">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" InstallPrivileges="elevated"/>
+
+    <MajorUpgrade AllowDowngrades="yes" />
+
+    <Upgrade Id="d23d5681-2e11-4020-900d-75b67c4156c0">
+      <UpgradeVersion OnlyDetect="no"
+         Minimum="1.0.0.0" Maximum="99.0.0.0"
+         Property="PREVIOUSVERSIONSINSTALLED"
+         IncludeMinimum="yes" IncludeMaximum="no"/>
+    </Upgrade>
+    <Media Id="1" Cabinet="CAB001.cab" EmbedCab="yes"/>
+
+
+    <UIRef Id="WixUI_InstallDir" />
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+
+    <CustomAction Id="RegisterService"
+                      Directory="INSTALLFOLDER"
+                      ExeCommand="&quot;[INSTALLFOLDER]ShareArea.Service.exe&quot; --install"
+                      Execute="deferred"
+                      Return="ignore"
+                      Impersonate="no"
+                 />
+
+    <CustomAction Id="RunService"
+                      Directory="INSTALLFOLDER"
+                      ExeCommand="&quot;[INSTALLFOLDER]ShareArea.Service.exe&quot; --run"
+                      Execute="deferred"
+                      Return="ignore"
+                      Impersonate="no"
+                 />
+    <CustomAction Id="StopService"
+                      Directory="INSTALLFOLDER"
+                      ExeCommand="&quot;[INSTALLFOLDER]ShareArea.Service.exe&quot; --stop"
+                      Execute="deferred"
+                      Return="ignore"
+                      Impersonate="no"
+                 />
+
+    <CustomAction Id="UnRegisterService"
+                      Directory="INSTALLFOLDER"
+                      ExeCommand="&quot;[INSTALLFOLDER]ShareArea.Service.exe&quot; --uninstall"
+                      Execute="deferred"
+                      Return="ignore"
+                      Impersonate="no"
+                 />
+
+    <InstallExecuteSequence>
+      <Custom Action='RegisterService' After='InstallFiles'>
+      </Custom>
+      <Custom Action='RunService' After='RegisterService'>
+      </Custom>
+      <Custom Action="UnRegisterService" After="InstallInitialize">
+        <![CDATA[Installed AND REMOVE="ALL"]]>
+      </Custom>
+      <Custom Action='StopService' After='UnRegisterService'>
+      </Custom>
+    </InstallExecuteSequence>
+
+    <Feature Id="ProductFeature" Title="Share Area" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="ShareArea" />
+			</Directory>
+		</Directory>
+	</Fragment>
+</Wix>

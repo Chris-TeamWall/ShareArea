@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <DirectoryRef Id="INSTALLFOLDER">
+      <Component Id="cmpE1F851C61D516D3CD7942BEF28CB151A" Guid="{3DD60562-E139-44AB-95DF-897AF8E66EBC}">
+        <File Id="filA18B7638FF8F8C5F5FE5B86E21165491" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\Microsoft.Win32.TaskScheduler.dll" />
+      </Component>
+      <Component Id="cmp0CC34AD3E519993734B5E6263F8BF4AC" Guid="{ED51EE80-956B-41D2-B83E-83411A45B684}">
+        <File Id="fil5910208E1EF354F70752D0181F54D1B3" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\ShareArea.Service.exe" />
+      </Component>
+      <Component Id="cmpDBA9E3071F5AC4543596C097EECAB7CF" Guid="{715F55EF-6C73-4DAD-B532-2215A4E9E5E7}">
+        <File Id="fil8BCC2D7FEA56D12B353C706A0DDB05DC" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\ShareArea.Service.exe.config" />
+      </Component>
+      <Component Id="cmpA17EEBDC0670836BC9CFB3850B01CFA1" Guid="{475587F7-43DB-4F0C-A3C7-DBF9EFBE5497}">
+        <File Id="fil45E2A917E3F91B3FE69BAC49AE21A7EC" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\ShareArea.UI.deps.json" />
+      </Component>
+      <Component Id="cmpC03443AF2020B1C1C1DEC7ABF182B7F0" Guid="{A2266B30-EE41-4446-AB3F-B77DAF205F1F}">
+        <File Id="fil7D56DD8BB842554EBA0B0644E74868F3" KeyPath="yes" Source="$(var.ShareArea.UI.TargetDir)\ShareArea.UI.dll" />
+      </Component>
+      <Component Id="cmp1234CC76E30064CF85F702A8E70C5761" Guid="{0BDAA3AB-F6B1-4B69-ADD2-972180F5FA52}">
+        <File Id="filBF63CD17E665D129280D993E713AE13E" KeyPath="yes" Source="$(var.ShareArea.UI.TargetDir)\ShareArea.UI.exe" />
+      </Component>
+      <Component Id="cmp8B7C9156FEBE1767E31EC65F5487E325" Guid="{C0C874B8-2167-42E5-8AB0-BACC428AB267}">
+        <File Id="fil0D57C144909C0FBB19C3B6A9BDC441AE" KeyPath="yes" Source="$(var.ShareArea.UI.TargetDir)\ShareArea.UI.runtimeconfig.json" />
+      </Component>
+      <Directory Id="dir55D101CB8E9A3720ABDBD789D53C1379" Name="de">
+        <Component Id="cmp18FED8EF052AD37C13746F1F8968427A" Guid="{1AE448F2-5A38-4CE7-B216-067C247DD549}">
+          <File Id="filA520AAB2D44B8F82D2AAAB3ABE6362EF" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\de\Microsoft.Win32.TaskScheduler.resources.dll" />
+        </Component>
+      </Directory>
+      <Directory Id="dirA15330FE8B00291DC0C333BC9A555EC7" Name="es">
+        <Component Id="cmp73E1CF6C278C09593AEDB379994C38D4" Guid="{3B3DC058-34FC-497F-98F1-8037F5568CFC}">
+          <File Id="fil27547716DE48FAEDBC4F338FD46D93AE" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\es\Microsoft.Win32.TaskScheduler.resources.dll" />
+        </Component>
+      </Directory>
+      <Directory Id="dirB503B00D9BE20B970D318F161BE2A69E" Name="fr">
+        <Component Id="cmp35FABC13F20BC56AEC79B50F303FA077" Guid="{113C12ED-3769-41F1-AD2F-64D92C625CF3}">
+          <File Id="filDDBEC94EEAA004976B22130A8E62AEBB" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\fr\Microsoft.Win32.TaskScheduler.resources.dll" />
+        </Component>
+      </Directory>
+      <Directory Id="dir90F2B490316BF2A1D344466DBE6EF84A" Name="it">
+        <Component Id="cmp79FC57907C7DC2387B2C40D9683D91B3" Guid="{E978E025-1C87-4F99-A467-A981D376EB61}">
+          <File Id="fil2D34C47EA42D2C89BC1723B73147ABE9" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\it\Microsoft.Win32.TaskScheduler.resources.dll" />
+        </Component>
+      </Directory>
+      <Directory Id="dir753A9FAB4F48B9205EA94AA8952FA0A7" Name="pl">
+        <Component Id="cmp6A6C3E7C4AD3123E93DD97445C9ED420" Guid="{0DB2709B-2B07-4869-8503-A48700AB37C5}">
+          <File Id="fil91CEC705763E388BE63A655431ECB05C" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\pl\Microsoft.Win32.TaskScheduler.resources.dll" />
+        </Component>
+      </Directory>
+      <Directory Id="dir08E674198FC07E45BF6EBDA80C1A0108" Name="ru">
+        <Component Id="cmpDF2E59DCEFAD4E0BEB48C8E7D0A505DF" Guid="{6D374A14-57C0-4617-B387-18068F7B8AD8}">
+          <File Id="fil3C1E64896CE5FEE899ABBC1202F63472" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\ru\Microsoft.Win32.TaskScheduler.resources.dll" />
+        </Component>
+      </Directory>
+      <Directory Id="dirD7689F544344E171A03D8DEE0FFC7D7B" Name="zh-CN">
+        <Component Id="cmp785344220569EDFCF98DAD6E5343170E" Guid="{7BBD1B05-C33D-4B29-8927-A4BB61E5741E}">
+          <File Id="fil7054B6B3ED844FA316F4CBADBC02CF94" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\zh-CN\Microsoft.Win32.TaskScheduler.resources.dll" />
+        </Component>
+      </Directory>
+      <Directory Id="dir2B5B4F9CD332C35B6AABABB4D7B80840" Name="zh-Hant">
+        <Component Id="cmp7D14625344201651F31A48287D374E2C" Guid="{CA3A93E7-E96D-4EED-A4E8-23C28C1DDD6D}">
+          <File Id="filFFFE4308D54BC0D7F4915BC604FA5145" KeyPath="yes" Source="$(var.ShareArea.Service.TargetDir)\zh-Hant\Microsoft.Win32.TaskScheduler.resources.dll" />
+        </Component>
+      </Directory>
+    </DirectoryRef>
+  </Fragment>
+  <Fragment>
+    <ComponentGroup Id="ProductComponents">
+      <ComponentRef Id="cmp7D14625344201651F31A48287D374E2C"/>
+      <ComponentRef Id="cmp785344220569EDFCF98DAD6E5343170E"/>
+      <ComponentRef Id="cmpE1F851C61D516D3CD7942BEF28CB151A"/>
+      <ComponentRef Id="cmp0CC34AD3E519993734B5E6263F8BF4AC"/>
+      <ComponentRef Id="cmpDBA9E3071F5AC4543596C097EECAB7CF"/>
+      <ComponentRef Id="cmpA17EEBDC0670836BC9CFB3850B01CFA1"/>
+      <ComponentRef Id="cmpC03443AF2020B1C1C1DEC7ABF182B7F0"/>
+      <ComponentRef Id="cmp1234CC76E30064CF85F702A8E70C5761"/>
+      <ComponentRef Id="cmp8B7C9156FEBE1767E31EC65F5487E325"/>
+      <ComponentRef Id="cmp18FED8EF052AD37C13746F1F8968427A"/>
+      <ComponentRef Id="cmp73E1CF6C278C09593AEDB379994C38D4"/>
+      <ComponentRef Id="cmp35FABC13F20BC56AEC79B50F303FA077"/>
+      <ComponentRef Id="cmp79FC57907C7DC2387B2C40D9683D91B3"/>
+      <ComponentRef Id="cmp6A6C3E7C4AD3123E93DD97445C9ED420"/>
+      <ComponentRef Id="cmpDF2E59DCEFAD4E0BEB48C8E7D0A505DF"/>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
